@@ -34,7 +34,7 @@ BUILDFLAGS := --rm --force-rm --compress -f $(CURDIR)/Dockerfile_$(ARCH) -t $(IM
 	--label org.label-schema.vendor=$(USERNAME)
 
 CACHEFLAGS := --no-cache=true --pull
-MOUNTFLAGS := # -v $(CURDIR)/data:/var/jenkins_home:rw # test without mount, prod with mount
+MOUNTFLAGS := # -v $(CURDIR)/data:/var/jenkins_home # test without mount, prod with mount
 NAMEFLAGS  := --name docker_$(SVCNAME) --hostname $(SVCNAME)
 OTHERFLAGS := -v /etc/hosts:/etc/hosts:ro -v /etc/localtime:/etc/localtime:ro # -e TZ=Asia/Kolkata
 PORTFLAGS  := -p 8080:8080 -p 50000:50000
